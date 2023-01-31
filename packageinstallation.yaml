@@ -1,0 +1,12 @@
+- name: package installation on hosts
+  hosts: all
+  become: yes
+  tasks:
+    - name: install packages
+      ansible.builtin.package:
+        name:
+          - nginx
+          - apache2
+          - mariadb-server
+          - tree
+        state: present
