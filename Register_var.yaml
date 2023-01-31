@@ -1,17 +1,18 @@
-- name: registering vars
+- name: Registering vars
   hosts: all
   tasks:
     - name: Registering vars playbook
       shell: uptime
-      registor: OUTPUT
+      register: OUTPUT
     
     - name: print output
       debug:
         msg: "{{OUTPUT.stdout}}"
 
-    - name: print Present working directory
+    - name: print present working directory
       shell: pwd
       register: OUTPUT1
+    
     - name: print working dir
       debug:
-        msg: "{{OUTPUT.stdout}}"
+        msg: "{{OUTPUT1.stdout}}"
