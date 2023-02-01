@@ -1,0 +1,14 @@
+- name: variable values
+  hosts: all
+  vars:
+    url:www.global.com
+  tasks:
+  - name: task1
+    debug:
+      msg: "the value of variable {{url}}"
+    vars: 
+      url:www.local.com
+
+  - name: task2 
+    debug:
+      msg: "the value at variable is {{url}}"
