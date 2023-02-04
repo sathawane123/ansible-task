@@ -1,0 +1,2 @@
+proxy_conf: /etc/httpd/conf.d/
+root_location: /var/www/html
