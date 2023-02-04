@@ -11,7 +11,7 @@
 - name: contained of apache2 index file
   get_url: 
   url: https://ansible-server.s3.us-west-1.amazonaws.com/index.html.txt
-  dest: "{{root_location}}/index.html"
+  dest: "{{root_location}}/index.html.txt"
 
   -name: start apache2 service
   service: apache2
