@@ -1,4 +1,4 @@
-- name: install httpd package
+- name: install apache2  package
   apt: 
     name:  
     - apache2
