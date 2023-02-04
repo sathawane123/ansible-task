@@ -1,7 +1,8 @@
 - name: install httpd package
   apt: 
+    name:  
+    - apache2
     state: present
-    name:  apache2
 
 - name: copy proxy file
   copy: 
@@ -13,6 +14,6 @@
   url: https://ansible-server.s3.us-west-1.amazonaws.com/index.html.txt
   dest: "{{root_location}}/index.html.txt"
 
-  -name: start apache2 service
+- name: start apache2 service
   service: apache2
   state: started
