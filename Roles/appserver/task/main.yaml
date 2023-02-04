@@ -1,0 +1,19 @@
+- name: installation package
+  package: 
+    name: "{{item}}"
+    state: present 
+  loop: 
+  - epel-release
+  - java
+
+- name: tomcat download
+  unarchive:
+    src: "{{tomcat_url}}"
+    dest: /opt
+    remote_src: yes 
+    register_var: out
+
+- name: print
+  debug:
+  msg: {{OUT.stdout}} 
+
